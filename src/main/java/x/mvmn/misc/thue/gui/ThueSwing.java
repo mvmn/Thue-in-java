@@ -56,9 +56,9 @@ public class ThueSwing extends JPanel {
 	protected final JTable tblRules = new JTable();
 	protected final JButton btnStart = new JButton(">");
 	protected final JButton btnStop = new JButton("[]");
-	protected final JComboBox cbxMode = new JComboBox(ThueInterpreter.ProcessingMode.values());
-	protected final JComboBox cbxRuleSelPolicy = new JComboBox(ThueInterpreter.RuleSelectionPolicy.values());
-	protected final JComboBox cbxTokenProcOrder = new JComboBox(ThueInterpreter.TokensProcessingOrder.values());
+	protected final JComboBox<ThueInterpreter.ProcessingMode> cbxMode = new JComboBox<>(ThueInterpreter.ProcessingMode.values());
+	protected final JComboBox<ThueInterpreter.RuleSelectionPolicy> cbxRuleSelPolicy = new JComboBox<>(ThueInterpreter.RuleSelectionPolicy.values());
+	protected final JComboBox<ThueInterpreter.TokensProcessingOrder> cbxTokenProcOrder = new JComboBox<>(ThueInterpreter.TokensProcessingOrder.values());
 	protected final JSlider sldStepDelay = new JSlider(JSlider.HORIZONTAL, 1, 1000, 100);
 	protected final JLabel lblStepDelay = new JLabel();
 	protected final JButton btnLoadSrc = new JButton("Load...");
@@ -132,8 +132,6 @@ public class ThueSwing extends JPanel {
 
 		cbxRuleSelPolicy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(cbxRuleSelPolicy.getSelectedItem());
-				System.out.println(((JComboBox) e.getSource()).getSelectedItem());
 				interpreter.setRuleSelectionPolicy((RuleSelectionPolicy) cbxRuleSelPolicy.getSelectedItem());
 			}
 		});
