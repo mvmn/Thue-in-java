@@ -2,6 +2,7 @@
 .project
 .settings/
 bin/
+target/
 
 # OS generated files #
 ######################
@@ -13,3 +14,4 @@ bin/
 Icon?
 ehthumbs.db
 Thumbs.db
+
